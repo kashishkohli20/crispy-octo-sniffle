@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 let app = express();
 
@@ -39,4 +40,6 @@ app.get('/projects', (req, res) => {
 	res.render('projects.hbs');
 });
 
-app.listen(3000);
+app.listen(port, () => {
+	console.log(`Starting the server on port ${port}.`);
+});
